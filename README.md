@@ -10,7 +10,7 @@ AI Muse is a versatile Software as a Service (SaaS) application that brings toge
 
 - **Image Creation:** Create stunning and unique images with the help of advanced AI algorithms.
 
-- **Short Video Generator:** Craft engaging 3-second short videos with just a few clicks.
+- **Short Video Generator:** Craft engaging short videos with just a few clicks.
 
 - **Music Clip Composer:** Generate music clips to add the perfect soundtrack to your creations.
 
