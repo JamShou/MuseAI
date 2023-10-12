@@ -13,7 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { MessageSquare } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import OpenAI from 'openai';
+import { ChatCompletionRequestMessage } from "openai";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -40,7 +40,7 @@ const ConversationPage = () => {
             messages: newMessages
         })
 
-        setMessages((current)) => [...currentUser, userMessage, response.data]);
+        setMessages((current) => [...current, userMessage, response.data]);
 
         form.reset();
     } catch (error: any) {
