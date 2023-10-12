@@ -33,13 +33,13 @@ MuseAI is a versatile Software as a Service (SaaS) application that brings toget
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/ai-muse.git
+   git clone https://github.com/JamShou/MuseAI.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd ai-muse
+   cd MuseAi
    ```
 
 3. Install dependencies:
