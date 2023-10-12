@@ -1,8 +1,8 @@
-# AI Muse
+# MuseAI
 
 ## Overview
 
-AI Muse is a versatile Software as a Service (SaaS) application that brings together a curated set of powerful AI tools to unleash your creativity. Whether you're a developer, designer, or artist, AI Muse provides cutting-edge capabilities to generate code, images, 3-second short videos, and music clips. Say goodbye to creative blocks and welcome a new era of inspiration with AI Muse.
+MuseAI is a versatile Software as a Service (SaaS) application that brings together a curated set of powerful AI tools to unleash your creativity. Whether you're a developer, designer, or artist, MuseAI provides cutting-edge capabilities to generate code, images, 3-second short videos, and music clips. Say goodbye to creative blocks and welcome a new era of inspiration with MuseAI.
 
 ## Features
 
@@ -62,11 +62,11 @@ AI Muse is a versatile Software as a Service (SaaS) application that brings toge
 
 ## Deployment
 
-Ensure to set up deployment configurations based on your hosting provider. AI Muse is compatible with platforms like Vercel, Netlify, and traditional cloud providers.
+Ensure to set up deployment configurations based on your hosting provider. MuseAI  is compatible with platforms like Vercel, Netlify, and traditional cloud providers.
 
 ## Contributing
 
-We welcome contributions from the community. Feel free to open issues, submit pull requests, or suggest new features to make AI Muse even more powerful and user-friendly.
+We welcome contributions from the community. Feel free to open issues, submit pull requests, or suggest new features to make MuseAI even more powerful and user-friendly.
 
 ## License
 
@@ -74,8 +74,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Special thanks to the open-source community for providing the tools and libraries that make AI Muse possible.
+- Special thanks to the open-source community for providing the tools and libraries that make MuseAI possible.
 
 ---
 
-Happy creating with AI Muse! If you have any questions or feedback, please don't hesitate to reach out.
+Happy creating with MuseAI! If you have any questions or feedback, please don't hesitate to reach out.
