@@ -41,7 +41,7 @@ const tools = [
     label: "Music Generation",
     icon: Music,
     color: "text-yellow-400",
-    bgColor: "bg-yellow-400/10",
+    bgColor: "bg-yellow-500/10",
     arrowColor: "text-yellow-500",
     href: "/music",
   },
@@ -75,7 +75,7 @@ const DashboardPage = () => {
             className={cn("p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer", tool.bgColor)}
           >
             <div className="flex items-center gap-x-4">
-              <div className={cn("p-2 w-fit rounded-md")}>
+              <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
                 <tool.icon className={cn("w-8 h-8", tool.color)} />
               </div>
               <div className="font-semibold">{tool.label}</div>
