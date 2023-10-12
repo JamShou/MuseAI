@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 
 const MobileSidebar = () => {
   const [isMounted, setIsMounted] = useState(false);
-  useEffect(() =>{
+  useEffect(() => {
     setIsMounted(true);
-  }, [])
+  }, []);
 
-  if(!isMounted){
+  if (!isMounted) {
     return null;
   }
 
@@ -25,7 +25,7 @@ const MobileSidebar = () => {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="p-0">
-        <Sidebar/>
+        <Sidebar />
       </SheetContent>
     </Sheet>
   );
