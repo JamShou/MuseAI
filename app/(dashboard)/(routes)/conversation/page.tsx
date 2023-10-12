@@ -13,11 +13,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { MessageSquare } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ChatCompletionRequestMessage } from "openai";
+import OpenAI from "openai";
 
 const ConversationPage = () => {
   const router = useRouter();
-  const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+  const [messages, setMessages] = useState<OpenAI.Chat.CreateChatCompletionRequestMessage[]>([]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -29,7 +29,7 @@ const ConversationPage = () => {
   const isLoading = form.formState.isSubmitting;
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-        const userMessage: ChatCompletionRequestMessage = {
+        const userMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = {
             role:"user",
             content: values.prompt
         };
