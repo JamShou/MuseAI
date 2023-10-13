@@ -1,10 +1,16 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
+const instructionMessage: ChatCompletionMessageParam = {
+  role: "system",
+  content: "Answer questions as short and quickly as possible. You must do it under 50 tokens."
+}
 
 export async function POST(
   req: Request
@@ -28,7 +34,9 @@ export async function POST(
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages
+      max_tokens: 100,
+      temperature: 0.2,
+      messages: [instructionMessage, ...messages]
     });
     
     return NextResponse.json(response.choices[0].message);
