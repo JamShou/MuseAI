@@ -64,8 +64,9 @@ export const Loader = () => {
     "An ostrich's eye is bigger than its brain.",
   ];
 
+  const initialRandomIndex = Math.floor(Math.random() * didYouKnowList.length);
   const [randomDidYouKnow, setRandomDidYouKnow] = useState<string>(
-    didYouKnowList[0]
+    didYouKnowList[initialRandomIndex]
   );
 
   useEffect(() => {
