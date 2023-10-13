@@ -10,7 +10,7 @@ import axios from "axios";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MessageSquare } from "lucide-react";
+import { Code } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import OpenAI from "openai";
@@ -21,7 +21,7 @@ import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
 import ReactMarkdown from "react-markdown";
 
-const ConversationPage = () => {
+const CodePage = () => {
   const router = useRouter();
   const [messages, setMessages] = useState<
     OpenAI.Chat.CreateChatCompletionRequestMessage[]
@@ -44,7 +44,7 @@ const ConversationPage = () => {
 
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post("/api/conversation", {
+      const response = await axios.post("/api/code", {
         messages: newMessages,
       });
 
@@ -62,11 +62,11 @@ const ConversationPage = () => {
   return (
     <div>
       <Heading
-        title="Conversation"
-        description="Our most innovative conversational model to date."
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-600/10"
+        title="Code Generation"
+        description="Our most innovative code model to date."
+        icon={Code}
+        iconColor="text-emerald-400"
+        bgColor="bg-emerald-500/10"
       />
       <div className="px-4 lg:px-8">
         <div>
@@ -83,7 +83,7 @@ const ConversationPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="What is the process of photosynthesis and how does it contribute to the survival of plants?"
+                        placeholder="Reverse a binary search tree in Java"
                         {...field}
                       />
                     </FormControl>
@@ -91,7 +91,7 @@ const ConversationPage = () => {
                 )}
               />
               <Button
-                className="col-span-12 lg:col-span-2 w-full bg-violet-500 hover:bg-violet-700"
+                className="col-span-12 lg:col-span-2 w-full bg-emerald-500 hover:bg-emerald-700"
                 disabled={isLoading}
               >
                 Generate
@@ -115,19 +115,26 @@ const ConversationPage = () => {
                 className={cn(
                   "p-8 w-full flex items-start gap-x-8 rounded-lg",
                   message.role === "user"
-                    ? "bg-white border border-black border-opacity-10"
+                    ? "bg-white border border-black/10"
                     : "bg-muted"
                 )}
               >
                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                <div
-                  className="text-sm overflow-hidden leading-7"
-                  dangerouslySetInnerHTML={{
-                    __html: message.content
-                      ? message.content.replace(/\n/g, "<br />")
-                      : "",
+                <ReactMarkdown
+                  components={{
+                    pre: ({ node, ...props }) => (
+                      <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                        <pre {...props} />
+                      </div>
+                    ),
+                    code: ({node,... props})=>(
+                      <code className="bg-black/10 rounded-lg p-1" {...props}/>
+                    )
                   }}
-                />
+                  className="text-sm overflow-hidden leading-7"
+                >
+                  {message.content || ""}
+                </ReactMarkdown>
               </div>
             ))}
           </div>
@@ -137,4 +144,4 @@ const ConversationPage = () => {
   );
 };
 
-export default ConversationPage;
+export default CodePage;
